@@ -1,0 +1,42 @@
+@CodeChallenge.Api_HostAddress = http://localhost:5095
+@organizationId = 123e4567-e89b-12d3-a456-426614174000
+
+### Get all messages for an organization
+GET {{CodeChallenge.Api_HostAddress}}/api/v1/organizations/{{organizationId}}/messages
+Accept: application/json
+
+###
+
+### Get a specific message
+GET {{CodeChallenge.Api_HostAddress}}/api/v1/organizations/{{organizationId}}/messages/123e4567-e89b-12d3-a456-426614174001
+Accept: application/json
+
+###
+
+### Create a new message
+POST {{CodeChallenge.Api_HostAddress}}/api/v1/organizations/{{organizationId}}/messages
+Content-Type: application/json
+
+{
+  "title": "Welcome Message",
+  "content": "This is a welcome message for our organization."
+}
+
+###
+
+### Update a message
+PUT {{CodeChallenge.Api_HostAddress}}/api/v1/organizations/{{organizationId}}/messages/123e4567-e89b-12d3-a456-426614174001
+Content-Type: application/json
+
+{
+  "title": "Updated Welcome Message",
+  "content": "This is an updated welcome message for our organization.",
+  "isActive": true
+}
+
+###
+
+### Delete a message
+DELETE {{CodeChallenge.Api_HostAddress}}/api/v1/organizations/{{organizationId}}/messages/123e4567-e89b-12d3-a456-426614174001
+
+###
